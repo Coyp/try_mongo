@@ -18,8 +18,13 @@ db.events.insert();
 # find
 
 ```c
+1. find all 
 db.events.find({});
 db.events.find({ $and($or): [ {}, {} ]});
+
+2. scan $gt $lt $ne
+db.numbers.find( {num: {"$gt": 19995 }} )
+
 ```
 
 # update 
