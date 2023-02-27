@@ -29,6 +29,21 @@ db.events.find({ $and($or): [ {}, {} ]});
 db.events.update({username: "smith"}, {$set: {country: "Canada"}})
   
 2. overwrite
-db.events.update({username: "smith"}, {country: "Canada"})
+db.events.update({"usernme.firstname": "smith"}, {country: "Canada"})
 
+3. patch array
+$addToSet -> only add 
+$push
+
+
+```
+
+# delete 
+
+```c
+1. remove collection 
+db.events.drop()
+
+2. remove document 
+db.events.remove({});
 ```
