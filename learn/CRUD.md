@@ -15,15 +15,17 @@ db.events.insert();
 ```
 
 
-# find
+# get/find
 
 ```c
-1. find all 
+
+1. scan all
 db.events.find({});
 db.events.find({ $and($or): [ {}, {} ]});
+db.numbers.find( {num: {"$gt"($lt $ne): 19995 }} )
 
-2. scan $gt $lt $ne
-db.numbers.find( {num: {"$gt": 19995 }} )
+2. show explain
+db.numbers.find({num: {"$gt": 19995 }}).explain("executionStats")
 
 ```
 
@@ -40,7 +42,9 @@ db.events.update({"usernme.firstname": "smith"}, {country: "Canada"})
 $addToSet -> only add 
 $push
 
-
+4. find+patch
+db.events.find().update_one();
+db.events.find().update_many();
 ```
 
 # delete 
@@ -51,4 +55,6 @@ db.events.drop()
 
 2. remove document 
 db.events.remove({});
+db.events.find().delete_one 
+db.events.find().delete_many
 ```
