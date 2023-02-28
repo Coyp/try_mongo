@@ -56,5 +56,5 @@ db.events.drop()
 2. remove document 
 db.events.remove({});
 db.events.find().delete_one 
-db.events.find().delete_many
+db.events.find({}).delete_many
 ```
