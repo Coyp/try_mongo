@@ -3,6 +3,8 @@
 ```c
 db.numbers.createIndex({num: 1})
 
+1. unique index 
+db.numbers.createIndex({num: 1}, {unique:true})
 ```
 
 # get 
